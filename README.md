@@ -10,13 +10,15 @@ sudo apt install libeigen3-dev
 ```
 ### Pangolin
 ```
-cd ~
 git clone https://github.com/stevenlovegrove/Pangolin.git
 cd Pangolin
-mkdir build && cd build
-cmake ..
-make
-sudo make install
+
+# Install dependencies (required, recommended, all)
+./scripts/install_prerequisites.sh required
+
+# Configure and build
+cmake -B build
+cmake --build build -j8 # Depend on your device
 ```
 ### OpenCV
 Check the OpenCV version on your computer (required [at least 3.0](https://github.com/UZ-SLAMLab/ORB_SLAM3)):
@@ -33,7 +35,7 @@ sudo apt install ros-[DISTRO]-hector-trajectory-server
 ## 2. Installation
 ```
 cd ~/catkin_ws/src
-git clone https://github.com/thien94/orb_slam3_ros.git
+git clone https://github.com/donghun-han/orb_slam3_ros.git
 cd ../
 catkin build
 ```
